@@ -15,7 +15,7 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-enum FilterList { bbcNews, aryNews, alJazeeraNews, cnn }
+enum FilterList { bbcNews, aryNews, alJazeeraNews, cnn, foxNews, abcNews}
 
 class _HomeScreenState extends State<HomeScreen> {
   NewsViewModel newsViewModel = NewsViewModel();
@@ -68,6 +68,12 @@ class _HomeScreenState extends State<HomeScreen> {
               if (FilterList.cnn.name == item.name) {
                 name = 'CNN';
               }
+              if (FilterList.foxNews.name == item.name) {
+                name = 'fox-news';
+              }
+              if (FilterList.abcNews.name == item.name) {
+                name = 'abc-news';
+              }
 
               setState(() {
                 selectedList = item;
@@ -81,6 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Text('Al Jzeazeera News'),
               ),
               PopupMenuItem(value: FilterList.cnn, child: Text('CNN')),
+              PopupMenuItem(value: FilterList.foxNews, child: Text('Fox News')),
+              PopupMenuItem(value: FilterList.abcNews, child: Text('ABC News')),
             ],
           ),
         ],
@@ -158,16 +166,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
                                 Positioned(
                                   bottom: 20,
-                                  left: width * .1,
+                                  left: width * .05,
+                                  right: width * .05,
+
                                   child: Card(
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(12),
                                     ),
                                     child: Container(
-                                      padding: EdgeInsets.all(10),
+                                      padding: EdgeInsets.symmetric(vertical: 10),
+                                      margin: EdgeInsets.symmetric(horizontal: 10),
                                       alignment: Alignment.bottomCenter,
-                                      height: height * 0.22,
-                                      width: width * 0.7,
+                                      height: height * 0.20,
+                                      width: width * 0.9,
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
@@ -195,7 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   color: Colors.black54,
                                                   fontWeight: FontWeight.bold,
                                                 ),
-                                                maxLines: 3,
+                                                maxLines: 1,
                                                 overflow: TextOverflow.ellipsis,
                                               ),
                                               Text(
@@ -205,7 +216,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   color: Colors.black54,
                                                   fontWeight: FontWeight.bold,
                                                 ),
-                                                maxLines: 3,
+                                                maxLines: 1,
                                                 overflow: TextOverflow.ellipsis,
                                               ),
                                             ],

@@ -83,48 +83,51 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
                         ),
                       ],
                     ),
-                    child: Column(
-                      children: [
-                        Text(
-                          widget.newsTitle,
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black87,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: height * .02),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              widget.source,
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.black87,
-                                fontWeight: FontWeight.w600,
-                              ),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Column(
+                        children: [
+                          Text(
+                            widget.newsTitle,
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black87,
+                              fontWeight: FontWeight.bold,
                             ),
-                            Text(
-                              format.format(newsdate),
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.black87,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: height * .03),
-                        Text(
-                          widget.description,
-                          style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.black87,
-                            fontWeight: FontWeight.w600,
                           ),
-                        ),
-                      ],
+                          SizedBox(height: height * .02),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                widget.source,
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              Text(
+                                format.format(newsdate),
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: height * .03),
+                          Text(
+                            widget.description,
+                            style: TextStyle(
+                              fontSize: 17,
+                              color: Colors.black87,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
